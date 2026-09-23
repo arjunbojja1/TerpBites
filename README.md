@@ -10,7 +10,11 @@ Project site for INST362 Group 25. Plain HTML, CSS, and JavaScript. No build ste
 
 ## Refreshing the dining data
 
-The site shows hours for about three weeks and dining hall menus for three days from the last time the data was pulled. To refresh:
+A GitHub Action (`.github/workflows/deploy.yml`) pulls fresh data and redeploys the site every morning at about 5 AM Eastern, and on every push to `main`. To run it right away, go to the repo's **Actions** tab, choose **Refresh dining data and deploy**, and click **Run workflow**.
+
+GitHub pauses scheduled workflows after 60 days with no commits. If that happens, re-enable the workflow from the Actions tab.
+
+To refresh the local copy for previewing:
 
 ```bash
 python3 scripts/update_data.py
