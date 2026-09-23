@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TerpBites</title>
+  <meta name="description" content="TerpBites helps University of Maryland students find affordable food that fits between classes, using real UMD Dining hours and menus. INST362 Group 25.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="TerpBites home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="var(--mango)"/>
+          <path d="M9 17a7 7 0 0 0 14 0H9Z" fill="var(--ink)"/>
+          <path d="M13 13c0-2 1.5-2.5 1.5-4.5M17.5 13c0-2 1.5-2.5 1.5-4.5" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        </svg>
+        TerpBites
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#finder">Find food</a></li>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-small" href="#progress">Project milestones</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="pill"><span class="pulse" aria-hidden="true"></span>INST362 project, Fall 2026</p>
+          <h1>Lunch in the time you actually have.</h1>
+          <p class="lede">TerpBites shows UMD students what's open, what it costs, and how long it takes to get there, so a short break between classes still ends with a real meal.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#finder">Find food now</a>
+            <a class="btn btn-ghost" href="#problem">Read the problem</a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="TerpBites app preview showing places open now">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="status"><span id="phone-clock">12:05</span><span class="notch" aria-hidden="true"></span><span>5G</span></div>
+
+              <div class="app-head">
+                <div>
+                  <p class="app-kicker">Open now near</p>
+                  <p class="app-title">McKeldin Mall</p>
+                </div>
+                <div class="ring" aria-label="Places open now">
+                  <svg viewBox="0 0 44 44" aria-hidden="true">
+                    <circle cx="22" cy="22" r="19" class="ring-track"/>
+                    <circle cx="22" cy="22" r="19" class="ring-fill"/>
+                  </svg>
+                  <span id="phone-open-count">–<small>open</small></span>
+                </div>
+              </div>
+
+              <div class="map" aria-hidden="true">
+                <svg viewBox="0 0 260 130" preserveAspectRatio="xMidYMid slice">
+                  <rect width="260" height="130" fill="var(--map)"/>
+                  <path d="M0 40 H260 M0 95 H260 M70 0 V130 M180 0 V130" stroke="var(--map-road)" stroke-width="9"/>
+                  <path d="M0 68 C60 60 120 80 260 62" stroke="var(--map-road)" stroke-width="5" fill="none"/>
+                  <rect x="88" y="52" width="74" height="30" rx="6" fill="var(--map-green)"/>
+                  <rect x="196" y="8" width="48" height="24" rx="4" fill="var(--map-block)"/>
+                  <rect x="12" y="104" width="44" height="20" rx="4" fill="var(--map-block)"/>
+                  <rect x="196" y="104" width="52" height="20" rx="4" fill="var(--map-block)"/>
+                  <path class="route" d="M125 67 V40 H180 V20" fill="none" stroke="var(--berry)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="2 8"/>
+                  <circle cx="125" cy="67" r="6" fill="var(--ink)" stroke="#fff" stroke-width="3"/>
+                  <g class="pin">
+                    <circle cx="180" cy="20" r="9" fill="var(--berry)" stroke="#fff" stroke-width="3"/>
+                  </g>
+                </svg>
+              </div>
+
+              <p class="app-section">Closest open spots</p>
+              <ul class="spots" id="phone-spots">
+                <li><span class="spot-icon" style="--c: var(--mango-soft)">🍽️</span><span class="spot-name">Loading…<small>&nbsp;</small></span><span class="spot-time">–</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="float float-a" aria-hidden="true">
+            <span class="float-dot"></span> <span id="float-open">Live UMD hours</span>
+          </div>
+          <div class="float float-b" aria-hidden="true">
+            <strong id="float-items">Today's</strong>&nbsp;dining hall menus
+          </div>
+        </div>
+      </div>
+      <p class="wrap hero-note" id="data-note">Hours and menus from UMD Dining Services.</p>
+    </section>
+
+    <!-- Problem -->
+    <section class="section problem" id="problem">
+      <div class="wrap problem-grid">
+        <div class="problem-copy">
+          <h2>Students skip meals because the information isn't there.</h2>
+          <p>Students at the University of Maryland need a quick, reliable way to get affordable food on and near campus. Instead, they run into unreliable dining hours, an awkward campus layout, and no clear idea how long a wait or walk will take.</p>
+          <p>Without reliable information, students spend their breaks walking to places that turn out to be closed, or give up and skip the meal altogether.</p>
+        </div>
+
+        <div class="scramble" aria-label="An illustrative example of a break between classes">
+          <p class="scramble-title">A typical 25-minute break</p>
+          <ol>
+            <li>
+              <time>12:05</time>
+              <div><strong>Class lets out.</strong> A café's old web page says it's open until 2.</div>
+            </li>
+            <li>
+              <time>12:14</time>
+              <div><strong>Arrives to a closed sign.</strong> Hours changed this semester.</div>
+            </li>
+            <li>
+              <time>12:20</time>
+              <div><strong>Checks the dining hall.</strong> The line is out the door.</div>
+            </li>
+            <li class="bad">
+              <time>12:30</time>
+              <div><strong>Walks into the next class hungry.</strong> Lunch skipped again.</div>
+            </li>
+          </ol>
+          <p class="scramble-note">Illustrative scenario. We'll replace it with stories from our user research.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Finder -->
+    <section class="section how" id="finder">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Find food that fits your break</h2>
+          <p>Pick where you are, where your next class is, and how long you have. TerpBites checks real UMD Dining hours and shows only the places you can get to, order from, and still make it to class.</p>
+        </div>
+
+        <div class="demo">
+          <form class="demo-controls" id="finder-form" onsubmit="return false">
+            <div class="field">
+              <label for="from">I'm at</label>
+              <select id="from"></select>
+            </div>
+            <div class="field">
+              <label for="to">My next class is in</label>
+              <select id="to"></select>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="start">Starting at</label>
+                <input type="time" id="start">
+              </div>
+              <div class="field">
+                <label for="day">Day</label>
+                <select id="day"></select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="break">Break length</label>
+              <output id="break-out" for="break">30 min</output>
+              <input type="range" id="break" min="10" max="90" step="5" value="30">
+              <div class="range-scale" aria-hidden="true"><span>10 min</span><span>90 min</span></div>
+            </div>
+
+            <fieldset class="toggle">
+              <legend>Type of place</legend>
+              <label><input type="radio" name="kind" value="all" checked> All</label>
+              <label><input type="radio" name="kind" value="Dining hall"> Dining halls</label>
+              <label><input type="radio" name="kind" value="Café"> Cafés</label>
+              <label><input type="radio" name="kind" value="quick"> Fast food</label>
+              <label><input type="radio" name="kind" value="Market"> Markets</label>
+            </fieldset>
+
+            <p class="demo-summary" id="demo-summary" aria-live="polite"></p>
+          </form>
+
+          <div class="demo-results">
+            <ul class="demo-list" id="demo-list"></ul>
+            <button type="button" class="show-more" id="show-closed" hidden></button>
+          </div>
+        </div>
+        <p class="demo-note">Hours come from UMD Dining Services. Walk times are estimated from building locations. Wait times are rough guesses by type of place until we can measure them in user research.</p>
+      </div>
+    </section>
+
+    <!-- Menus -->
+    <section class="section menus" id="menus">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What's in the dining halls</h2>
+          <p>Real menus for South Campus, Yahentamitsi, and 251 North, pulled from UMD Dining's nutrition site.</p>
+        </div>
+
+        <div class="menu-bar">
+          <div class="seg" role="tablist" aria-label="Dining hall" id="hall-tabs"></div>
+          <div class="menu-filters">
+            <select id="menu-day" aria-label="Day"></select>
+            <div class="seg seg-small" role="tablist" aria-label="Meal" id="meal-tabs"></div>
+          </div>
+        </div>
+
+        <div class="menu-meta" id="menu-meta"></div>
+
+        <div class="diet-filter" role="group" aria-label="Dietary filter">
+          <span>Show:</span>
+          <label><input type="radio" name="diet" value="all" checked> Everything</label>
+          <label><input type="radio" name="diet" value="vegetarian"> Vegetarian</label>
+          <label><input type="radio" name="diet" value="vegan"> Vegan</label>
+          <label><input type="radio" name="diet" value="halal"> Halal-friendly</label>
+        </div>
+
+        <div class="stations" id="stations"></div>
+        <p class="demo-note menu-source">Menus can change. See <a href="https://nutrition.umd.edu/" target="_blank" rel="noopener">nutrition.umd.edu</a> for allergens and full nutrition facts.</p>
+      </div>
+    </section>
+
+    <!-- Domain -->
+    <section class="section domain">
+      <div class="wrap domain-inner">
+        <h2>Problem domain</h2>
+        <ul class="domain-list">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10Z"/></svg>
+            Campus life &amp; student well-being
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M16 3c-2 0-3 2.5-3 6h3v12"/></svg>
+            Food &amp; dining navigation
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18h3"/></svg>
+            Mobile productivity
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.6 6-11a6 6 0 0 0-12 0c0 5.4 6 11 6 11Z"/><circle cx="12" cy="10" r="2.2"/></svg>
+            Local discovery
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Audience -->
+    <section class="section audience" id="audience">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Who we're designing for</h2>
+          <p>Mostly UMD students, plus the food businesses that serve them.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="aud aud-oncampus">
+            <div class="aud-art" aria-hidden="true">🏫</div>
+            <h3>On-campus students</h3>
+            <p>Moving between dorms, classes, and dining halls on foot, often with only a few minutes between them.</p>
+          </article>
+          <article class="aud aud-commuter">
+            <div class="aud-art" aria-hidden="true">🚌</div>
+            <h3>Commuters</h3>
+            <p>On campus for long stretches with no kitchen nearby and no time to go home between classes.</p>
+          </article>
+          <article class="aud aud-business">
+            <div class="aud-art" aria-hidden="true">🍜</div>
+            <h3>Local restaurants &amp; campus food services</h3>
+            <p>College Park businesses and on-campus vendors who want to reach the student market.</p>
+            <span class="tag">Stakeholder</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Constraints -->
+    <section class="section constraints" id="constraints">
+      <div class="wrap constraints-grid">
+        <div class="section-head">
+          <h2>What we're designing around</h2>
+          <p>Any solution has to work within the limits students already live with.</p>
+        </div>
+        <dl class="limits">
+          <div>
+            <dt><span class="limit-icon" aria-hidden="true">⏱</span>Short breaks</dt>
+            <dd>A meal has to fit in the gap between two classes.</dd>
+          </div>
+          <div>
+            <dt><span class="limit-icon" aria-hidden="true">💸</span>Tight budgets</dt>
+            <dd>Price matters as much as distance. A dining hall lunch at the door is <span data-door="Lunch">$16.25</span>.</dd>
+          </div>
+          <div>
+            <dt><span class="limit-icon" aria-hidden="true">🚶</span>Walking only</dt>
+            <dd>Many students can't drive, so anything far off campus is out.</dd>
+          </div>
+          <div>
+            <dt><span class="limit-icon" aria-hidden="true">🕘</span>Hours that change</dt>
+            <dd>Hours vary by day and by semester, and some venues are still listed as "TBD".</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="section team" id="team">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Meet Group 25</h2>
+          <p>Six students in INST362 at the University of Maryland.</p>
+        </div>
+        <ul class="team-grid">
+          <li><span class="avatar" style="--a: var(--mango)">AB</span><span class="member">Arjun Bojja</span></li>
+          <li><span class="avatar" style="--a: var(--berry-soft)">AM</span><span class="member">Alejandro Martinez</span></li>
+          <li><span class="avatar" style="--a: var(--mint)">RB</span><span class="member">Rokya Ba</span></li>
+          <li><span class="avatar" style="--a: var(--lilac)">MM</span><span class="member">Marco Manzanarez</span></li>
+          <li><span class="avatar" style="--a: var(--mango-soft)">NH</span><span class="member">Nivedita Harilal</span></li>
+          <li><span class="avatar" style="--a: var(--mint-soft)">YD</span><span class="member">Yuanfeng Du</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Milestones -->
+    <section class="section progress" id="progress">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Project milestones</h2>
+          <p>The five stages of our project. We'll post each deliverable here as we finish it.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Problem Definition &amp; Research Plan</h3>
+            <p>Problem statement, domain, audience, constraints, and how we'll study them.</p>
+          </li>
+          <li>
+            <h3>User Research &amp; Synthesis</h3>
+            <p>Interviews and surveys with UMD students, then an affinity diagram of what we learn.</p>
+          </li>
+          <li>
+            <h3>Ideation &amp; Prototype</h3>
+            <p>Sketches, then an interactive prototype of TerpBites.</p>
+          </li>
+          <li>
+            <h3>Usability Testing &amp; Iteration</h3>
+            <p>Testing the prototype with students and fixing what trips them up.</p>
+          </li>
+          <li>
+            <h3>Final Portfolio &amp; Presentation</h3>
+            <p>The finished design, the case for it, and our final presentation.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <a class="brand" href="#top">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="var(--mango)"/>
+            <path d="M9 17a7 7 0 0 0 14 0H9Z" fill="var(--ink)"/>
+            <path d="M13 13c0-2 1.5-2.5 1.5-4.5M17.5 13c0-2 1.5-2.5 1.5-4.5" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          </svg>
+          TerpBites
+        </a>
+        <p>A class project by Group 25 for INST362 at the University of Maryland. Not affiliated with UMD Dining Services.</p>
+        <p class="footer-sources">Data: hours from <a href="https://dining.umd.edu/hours-locations" target="_blank" rel="noopener">UMD Dining</a>, menus from <a href="https://nutrition.umd.edu/" target="_blank" rel="noopener">nutrition.umd.edu</a>, building locations from <a href="https://umd.io" target="_blank" rel="noopener">umd.io</a>. <span id="footer-updated"></span></p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#problem">Problem</a></li>
+          <li><a href="#finder">Find food</a></li>
+          <li><a href="#menus">Menus</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#progress">Milestones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="data/dining.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
