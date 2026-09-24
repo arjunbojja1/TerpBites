@@ -225,7 +225,13 @@
 
   // ---------- menus ----------
   const halls = D.venues.filter((v) => v.hasMenu && D.menus[v.id]);
-  const state = { hall: halls[0]?.id, day: null, meal: null, diet: "all", expanded: new Set() };
+  const state = { 
+    hall: halls[0]?.id, 
+    day: null, 
+    meal: null, 
+    diet: "all", 
+    expanded: new Set(),
+    openStations: new Set()};
   const menuDates = [...new Set(halls.flatMap((h) => Object.keys(D.menus[h.id])))].sort();
   state.day = menuDates.includes(todayIso) ? todayIso : menuDates[0];
 
@@ -282,16 +288,73 @@
     }
 
     const LIMIT = 6;
+
     $("stations").innerHTML = cards.map((s) => {
       const key = `${state.hall}|${state.day}|${state.meal}|${s.station}`;
-      const open = state.expanded.has(key);
-      const shown = open ? s.items : s.items.slice(0, LIMIT);
+
+      // if all items are shown, the station is considered "open" (expanded)
+      const stationOpen = state.openStations.has(key);
+
+      // whether to show all food items
+      const itemsExpanded = state.expanded.has(key);
+
+      const shown = itemsExpanded
+        ? s.items
+        : s.items.slice(0, LIMIT);
+
       const more = s.items.length - LIMIT;
-      return `<article class="station">
-        <h3>${esc(s.station)} <span>${s.items.length}</span></h3>
-        <ul>${shown.map((it) => `<li>${esc(it.name)}${tagHtml(it.tags)}</li>`).join("")}</ul>
-        ${more > 0 ? `<button type="button" class="station-more" data-station="${esc(key)}">${open ? "Show less" : `Show ${more} more`}</button>` : ""}
-      </article>`;
+
+      return `
+        <article class="station ${stationOpen ? "station-open" : ""}">
+
+          <button
+            type="button"
+            class="station-toggle"
+            data-toggle-station="${esc(key)}"
+            aria-expanded="${stationOpen}"
+          >
+            <span class="station-arrow">▶</span>
+            <span class="station-name">${esc(s.station)}</span>
+            <span class="station-count">${s.items.length}</span>
+          </button>
+
+          ${
+            stationOpen
+              ? `
+                <div class="station-body">
+                  <ul>
+                    ${shown
+                      .map(
+                        (it) =>
+                          `<li>${esc(it.name)}${tagHtml(it.tags)}</li>`
+                      )
+                      .join("")}
+                  </ul>
+
+                  ${
+                    more > 0
+                      ? `
+                        <button
+                          type="button"
+                          class="station-more"
+                          data-station="${esc(key)}"
+                        >
+                          ${
+                            itemsExpanded
+                              ? "Show less"
+                              : `Show ${more} more`
+                          }
+                        </button>
+                      `
+                      : ""
+                  }
+                </div>
+              `
+              : ""
+          }
+
+        </article>
+      `;
     }).join("");
   }
 
@@ -308,12 +371,39 @@
   $("menu-day").addEventListener("change", (e) => { state.day = e.target.value; state.meal = null; renderMenus(); });
   document.querySelectorAll('input[name="diet"]').forEach((el) => el.addEventListener("change", () => { state.diet = el.value; renderMenus(); }));
   $("stations").addEventListener("click", (e) => {
-    const b = e.target.closest("[data-station]");
-    if (!b) return;
-    const k = b.dataset.station;
-    state.expanded.has(k) ? state.expanded.delete(k) : state.expanded.add(k);
+
+  // Fold / Expand 整个 station
+  const toggle = e.target.closest("[data-toggle-station]");
+
+  if (toggle) {
+    const key = toggle.dataset.toggleStation;
+
+    if (state.openStations.has(key)) {
+      state.openStations.delete(key);
+    } else {
+      state.openStations.add(key);
+    }
+
     renderMenus();
-  });
+    return;
+  }
+
+
+  // 原来的 Show more / Show less
+  const moreButton = e.target.closest("[data-station]");
+
+  if (moreButton) {
+    const key = moreButton.dataset.station;
+
+    if (state.expanded.has(key)) {
+      state.expanded.delete(key);
+    } else {
+      state.expanded.add(key);
+    }
+
+    renderMenus();
+  }
+});
 
   renderPhone();
   renderFinder();
