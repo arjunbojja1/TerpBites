@@ -28,7 +28,7 @@
           <li><a href="#problem">Problem</a></li>
           <li><a href="#finder">Find food</a></li>
           <li><a href="#menus">Menus</a></li>
-          <li><a href="#persona">Persona</a></li>
+          <li><a href="#persona">Personas</a></li>
           <li><a href="#team">Team</a></li>
         </ul>
       </nav>
@@ -264,12 +264,13 @@
             <div class="aud-art" aria-hidden="true">🏫</div>
             <h3>On-campus students</h3>
             <p>Moving between dorms, classes, and dining halls on foot, often with only a few minutes between them.</p>
+            <a class="aud-link" href="#persona" data-persona="jordan">Meet Jordan, our draft persona</a>
           </article>
           <article class="aud aud-commuter">
             <div class="aud-art" aria-hidden="true">🚌</div>
             <h3>Commuters</h3>
             <p>On campus for long stretches with no kitchen nearby and no time to go home between classes.</p>
-            <a class="aud-link" href="#persona">Meet Maya, our draft persona</a>
+            <a class="aud-link" href="#persona" data-persona="maya">Meet Maya, our draft persona</a>
           </article>
           <article class="aud aud-business">
             <div class="aud-art" aria-hidden="true">🍜</div>
@@ -285,11 +286,16 @@
     <section class="section persona" id="persona">
       <div class="wrap">
         <div class="section-head">
-          <h2>Draft persona</h2>
-          <p>A composite commuter student based on our target audience. We'll check each detail against what we learn in user research.</p>
+          <h2>Draft personas</h2>
+          <p>Two composite students based on our target audience. We'll check each detail against what we learn in user research.</p>
         </div>
 
-        <div class="persona-grid">
+        <div class="seg persona-tabs" role="tablist" aria-label="Personas">
+          <button type="button" role="tab" id="tab-maya" aria-controls="persona-maya" aria-selected="true">Maya, commuter</button>
+          <button type="button" role="tab" id="tab-jordan" aria-controls="persona-jordan" aria-selected="false" tabindex="-1">Jordan, freshman</button>
+        </div>
+
+        <div class="persona-grid" id="persona-maya" role="tabpanel" aria-labelledby="tab-maya">
           <aside class="persona-profile">
             <img src="images/persona-maya.webp" alt="Smiling student with curly hair wearing a denim jacket and backpack" width="1184" height="1088" loading="lazy">
             <div class="persona-id">
@@ -340,6 +346,62 @@
                 <li>Keep meals under $10</li>
                 <li>See at a glance what's open and how long it takes to get there</li>
                 <li>Spend less time planning food and more time studying</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <div class="persona-grid" id="persona-jordan" role="tabpanel" aria-labelledby="tab-jordan" hidden>
+          <aside class="persona-profile">
+            <img src="images/persona-jordan.webp" alt="Smiling student with glasses and a backpack holding a green notebook" width="872" height="700" loading="lazy">
+            <div class="persona-id">
+              <h3>Jordan Lee</h3>
+              <p>On-campus freshman</p>
+            </div>
+          </aside>
+
+          <div class="persona-boxes">
+            <article class="persona-box">
+              <h3>Demographics</h3>
+              <p class="persona-sub">Pertinent info</p>
+              <ul>
+                <li>18 years old, freshman, Biology major</li>
+                <li>Lives in Ellicott Hall on North Campus</li>
+                <li>Has an Anytime Dining meal plan plus some Dining Dollars</li>
+                <li>First semester at UMD and still learning the campus</li>
+                <li>Doesn't have a car</li>
+              </ul>
+            </article>
+            <article class="persona-box">
+              <h3>Routines, tasks, needs</h3>
+              <p class="persona-sub">Behaviors or habits in his daily life</p>
+              <ul>
+                <li>Has early labs and back-to-back morning classes on South Campus</li>
+                <li>Usually eats at Yahentamitsi because it's close to his dorm</li>
+                <li>Studies late and gets hungry after the dining halls close</li>
+                <li>Uses Dining Dollars at cafés and the North Campus Market</li>
+                <li>Plans meals around his friends' schedules</li>
+              </ul>
+            </article>
+            <article class="persona-box persona-pain">
+              <h3>Pain points</h3>
+              <p class="persona-sub">Frustrations; what he's struggling with</p>
+              <ul>
+                <li>Doesn't know which dining hall is closest to his classes</li>
+                <li>Misses breakfast, which ends at 10:30 AM, on days with early labs</li>
+                <li>Burns through Dining Dollars on snacks even though he has a meal plan</li>
+                <li>Eats the same food over and over because he never checks the menus</li>
+                <li>Doesn't know what's open late besides the markets</li>
+              </ul>
+            </article>
+            <article class="persona-box persona-goal">
+              <h3>Outcomes</h3>
+              <p class="persona-sub">Things he wants to achieve</p>
+              <ul>
+                <li>Get the most out of his meal plan instead of spending extra</li>
+                <li>Know where to eat near his next class</li>
+                <li>Check menus ahead of time so he has more variety</li>
+                <li>Find late-night food near his dorm</li>
               </ul>
             </article>
           </div>
@@ -445,7 +507,7 @@
           <li><a href="#problem">Problem</a></li>
           <li><a href="#finder">Find food</a></li>
           <li><a href="#menus">Menus</a></li>
-          <li><a href="#persona">Persona</a></li>
+          <li><a href="#persona">Personas</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#progress">Milestones</a></li>
         </ul>

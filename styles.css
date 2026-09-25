@@ -430,6 +430,8 @@ input[type="range"] { width: 100%; accent-color: var(--berry); height: 28px; cur
 /* Persona */
 .persona { border-top: 1px solid var(--line); }
 .aud-link { display: inline-block; margin-top: 16px; font-weight: 700; color: var(--ink); text-underline-offset: 3px; }
+.persona-tabs { margin-bottom: 24px; }
+.persona-grid[hidden] { display: none; }
 .persona-grid { display: grid; grid-template-columns: 300px 1fr; gap: 24px; align-items: start; }
 .persona-profile { position: sticky; top: 100px; }
 .persona-profile img {
@@ -544,6 +546,8 @@ input[type="range"] { width: 100%; accent-color: var(--berry); height: 28px; cur
   .scramble li::before { left: 56px; }
   .scramble li:not(:last-child)::after { left: 61px; }
   .demo-controls { padding: 22px; }
+  .persona-tabs { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+  .persona-tabs button { padding: 10px 6px; font-size: .9rem; }
   #hall-tabs { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; }
   #hall-tabs button { padding: 10px 6px; font-size: .9rem; }
   .demo-list { padding: 4px 8px; }

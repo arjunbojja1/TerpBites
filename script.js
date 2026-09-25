@@ -410,3 +410,31 @@
   if (halls.length) renderMenus();
   setInterval(renderPhone, 60 * 1000);
 })();
+
+// Persona tabs (works even if dining data fails to load)
+(function () {
+  const tabs = [...document.querySelectorAll(".persona-tabs [role=tab]")];
+  if (!tabs.length) return;
+
+  function select(tab, focus) {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab));
+    tab.addEventListener("keydown", (e) => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (step) select(tabs[(i + step + tabs.length) % tabs.length], true);
+    });
+  });
+
+  document.querySelectorAll("[data-persona]").forEach((link) => {
+    link.addEventListener("click", () => select(document.getElementById(`tab-${link.dataset.persona}`)));
+  });
+})();
