@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Affinity Diagram · TerpBites</title>
+  <meta name="description" content="How Group 25 used an affinity diagram to make sense of our TerpBites interviews and observations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html" aria-label="TerpBites home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="16" r="16" fill="var(--mango)"/>
+          <path d="M9 17a7 7 0 0 0 14 0H9Z" fill="var(--ink)"/>
+          <path d="M13 13c0-2 1.5-2.5 1.5-4.5M17.5 13c0-2 1.5-2.5 1.5-4.5" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+        </svg>
+        TerpBites
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#context">Context</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#analysis">Analysis</a></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-small" href="index.html#progress">Project milestones</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <p class="pill"><span class="pulse" aria-hidden="true"></span>Milestone 2: User Research &amp; Synthesis</p>
+        <h1>Affinity diagram</h1>
+        <p class="lede">We surveyed 23 students about how they get food between classes, put their answers on sticky notes, and grouped them until patterns showed up. This page walks through how we did it and what we learned.</p>
+      </div>
+    </section>
+
+    <!-- Context -->
+    <section class="section" id="context">
+      <div class="wrap context-grid">
+        <div>
+          <h2>Project context</h2>
+        </div>
+        <div>
+          <h3 class="label-h">Problem statement</h3>
+          <p class="statement">Students at the University of Maryland need a quick and reliable way to get affordable food on and near campus. Right now, many students deal with unreliable dining hours, a confusing campus layout, and no clear idea how long the wait or the walk will take. Because there isn't reliable information, students waste their breaks walking to places that turn out to be closed, or they end up skipping meals altogether.</p>
+
+          <h3 class="label-h">Research questions</h3>
+          <ol class="rq-list">
+            <li><span>RQ1</span>How do UMD students currently decide where to eat between classes?</li>
+            <li><span>RQ2</span>What information matters most to students when they have limited time to get food?</li>
+            <li><span>RQ3</span>What problems do students run into with dining hours, prices, distance, and wait times?</li>
+            <li><span>RQ4</span>How could TerpBites make finding food between classes faster and easier?</li>
+          </ol>
+
+          <h3 class="label-h data-h">Our data</h3>
+          <p class="data-note">We ran a 14-question Google Forms survey about dining habits and got 23 responses (22 current UMD students, 7 living on campus and 16 commuters). The last question was open-ended: "If you could improve one thing about getting food on or near campus between classes, what would it be?" Those answers, plus the key multiple choice results, are what went into our affinity diagram.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Our process</h2>
+          <p>We followed the four steps of affinity diagramming. Each screenshot shows our board at the end of that step.</p>
+        </div>
+
+        <ol class="steps-detail">
+          <li>
+            <div class="step-text">
+              <span class="step-num">1</span>
+              <h3>Put every response on a note</h3>
+              <p>Every answer to our open-ended question became its own yellow note, written exactly how the student said it. Long answers with more than one idea were split into separate notes. The most important multiple choice results became blue notes so the numbers could sit next to the quotes.</p>
+            </div>
+            <figure class="shot">
+              <img src="images/affinity/step1.png" alt="Step 1: all sticky notes from our interviews and observations, before grouping" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+              <figcaption>Step 1: all of our notes on the board</figcaption>
+            </figure>
+          </li>
+          <li>
+            <div class="step-text">
+              <span class="step-num">2</span>
+              <h3>Group similar notes</h3>
+              <p>We moved notes that seemed related next to each other without naming the groups yet, so the data could lead instead of our own assumptions.</p>
+            </div>
+            <figure class="shot">
+              <img src="images/affinity/step2.png" alt="Step 2: sticky notes moved into rough clusters" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+              <figcaption>Step 2: first rough clusters</figcaption>
+            </figure>
+          </li>
+          <li>
+            <div class="step-text">
+              <span class="step-num">3</span>
+              <h3>Name each group</h3>
+              <p>We gave each group a short label written from a student's point of view, like "I never know how long the line will be." We ended up with eight groups.</p>
+            </div>
+            <figure class="shot">
+              <img src="images/affinity/step3.png" alt="Step 3: clusters with labels" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+              <figcaption>Step 3: labeled groups</figcaption>
+            </figure>
+          </li>
+          <li>
+            <div class="step-text">
+              <span class="step-num">4</span>
+              <h3>Organize groups into themes</h3>
+              <p>We combined the eight groups into four bigger themes and tagged each one with the research questions it helps answer. These themes are what we use in the analysis below.</p>
+            </div>
+            <figure class="shot">
+              <img src="images/affinity/step4.png" alt="Step 4: labeled groups organized under larger themes" loading="lazy" onerror="this.parentElement.classList.add('missing')">
+              <figcaption>Step 4: final themes</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Analysis -->
+    <section class="section" id="analysis">
+      <div class="wrap narrow-wrap">
+        <div class="section-head">
+          <h2>Analysis</h2>
+        </div>
+        <div class="analysis" id="analysis-body">
+          <p>The biggest thing we learned is that time, more than food, is the main problem. 20 of the 23 people we surveyed said they skipped or delayed a meal in the last two weeks because they didn't have enough time between classes. The most common request in the open-ended answers was a way to know about lines before walking over ("knowing if there's going to be line beforehand," "crowd meter/ wait time"). When the line is too long, about half of the respondents (12 of 23) just go to another restaurant, which uses up even more of their break.</p>
+          <p>Distance was the top factor people use to pick where to eat (9 of 23), and most people are only willing to walk 5 to 9 minutes. Nobody said they would walk 15 minutes or more. Students also pointed out that food is bunched up in a couple of spots, mainly the Stamp and the Taco Bell and Subway area in Kirwan, so if your classes are somewhere else your options are limited. This backs up the "awkward campus layout" part of our problem statement.</p>
+          <p>For information, 15 of 23 people use Google Maps and only 2 use the UMD Dining website, even though that's where the official hours are posted. 11 people said they've shown up to a place that was unexpectedly closed, but nobody picked opening hours as their top factor, which makes us think students just assume a place is open until it isn't. Price also matters a lot (17 of 23 said moderately or very much), and one student pointed out that a lot of places in the Stamp don't take Dining Dollars. A few students wanted healthier food and to see menus ahead of time, like the student who said they "wasted a break to eat nothing" because they didn't know what a place served.</p>
+          <p>Put together, the main user needs are to know how busy a place is before going, to only see places they can get to and back from in time, to see menus, prices, and payment options ahead of time, and to trust that a place is actually open. These match the features people said would be most useful: walking distance (8), prices and menus (8), and wait times (6). For our next steps, we're going to update our personas. 16 of our 23 respondents were commuters, so Maya's situation is more common than we expected, and wait times should be a bigger pain point for both Maya and Jordan. When we move into ideation, our design goals are to show estimated wait or busy times, filter places by how far they are from your next class, and show menus, prices, and accepted payments in one place.</p>
+          <p>One limitation is that our sample was small and skewed toward seniors (14 of 23), and one respondent said they weren't a current UMD student. We want to check these findings with more freshmen and on-campus students during our interviews and usability testing.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <a class="brand" href="index.html">
+          <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="var(--mango)"/>
+            <path d="M9 17a7 7 0 0 0 14 0H9Z" fill="var(--ink)"/>
+            <path d="M13 13c0-2 1.5-2.5 1.5-4.5M17.5 13c0-2 1.5-2.5 1.5-4.5" stroke="var(--ink)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          </svg>
+          TerpBites
+        </a>
+        <p>A class project by Group 25 for INST362 at the University of Maryland. Not affiliated with UMD Dining Services.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#persona">Personas</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#progress">Milestones</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
