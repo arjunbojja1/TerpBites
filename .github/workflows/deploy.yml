@@ -34,6 +34,17 @@ jobs:
           TZ: America/New_York
         run: python3 scripts/update_data.py
 
+      - name: Build findings report PDF
+        # A typo in the report should never take the website down.
+        continue-on-error: true
+        run: |
+          pip install --quiet markdown
+          python3 report/build.py
+          google-chrome --headless=new --no-sandbox --disable-gpu --no-pdf-header-footer \
+            --allow-file-access-from-files --virtual-time-budget=10000 \
+            --print-to-pdf="$PWD/report/TerpBites_Findings.pdf" "file://$PWD/report/findings.html"
+          ls -la report/TerpBites_Findings.pdf
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3

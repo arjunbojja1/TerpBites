@@ -33,3 +33,18 @@ Open `index.html` in a browser, or run a local server:
 ```bash
 python3 -m http.server 8362
 ```
+
+## Editing the findings report
+
+The Research Findings and Analysis report builds itself from three files in `report/`:
+
+- `content.md`: all the text. Edit it on GitHub (open the file, click the pencil, then **Commit changes**). The notes at the top of the file explain the formatting.
+- `data.json`: the numbers, titles, and captions for the charts and stat boxes.
+- `style.css` and `build.py`: the look and the build step. You shouldn't need to touch these.
+
+After each commit, the GitHub Action rebuilds the report. A few minutes later the new version is at:
+
+- PDF: https://arjunbojja1.github.io/TerpBites/report/TerpBites_Findings.pdf
+- Web version: https://arjunbojja1.github.io/TerpBites/report/findings.html
+
+To build it on your own computer: `pip install markdown`, then `python3 report/build.py`, and open `report/findings.html`.

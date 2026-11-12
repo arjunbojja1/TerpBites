@@ -1,0 +1,98 @@
+{
+  "cover": {
+    "pill": "INST362 Group 25 · Research Findings and Analysis (Draft)",
+    "title": "Research findings and analysis",
+    "members": "Arjun Bojja, Alejandro Martinez, Rokya Ba, Marco Manzanarez, Nivedita Harilal, Yuanfeng Du",
+    "website": "arjunbojja1.github.io/TerpBites"
+  },
+
+  "tiles": [
+    { "big": "87%", "text": "skipped or delayed a meal in the past 2 weeks because of time" },
+    { "big": "48%", "text": "have shown up to a place that was unexpectedly closed" },
+    { "big": "65%", "text": "use Google Maps to find food. Only 9% use the UMD Dining site" },
+    { "big": "74%", "text": "say price affects where they eat moderately or very much" }
+  ],
+
+  "charts": {
+    "persona": {
+      "title": "Persona groups",
+      "sub": "Q3: Living on campus or commuting",
+      "total": 23,
+      "split": true,
+      "rows": [["Commuter (Maya)", 16], ["On-campus (Jordan)", 7]],
+      "note": "Commuters outnumber on-campus students more than 2 to 1."
+    },
+    "year": {
+      "title": "Class year",
+      "sub": "Q2: What year are you?",
+      "total": 23,
+      "rows": [["Freshman", 3], ["Sophomore", 1], ["Junior", 5], ["Senior", 14]],
+      "highlight": ["Senior"],
+      "note": "61% seniors and only 3 freshmen, so our sample skews older."
+    },
+    "skipped": {
+      "title": "Skipped or delayed meals because of time",
+      "sub": "Q6: In the past two weeks, how often?",
+      "total": 23,
+      "rows": [["Never", 3], ["Occasionally", 9], ["2 to 3 times", 7], ["4 to 5 times", 4], ["6 or more times", 0]],
+      "note": "20 of 23 skipped or delayed eating at least once. This confirms the core problem in our problem statement."
+    },
+    "factor": {
+      "title": "Most important factor",
+      "sub": "Q7: When choosing where to eat between classes",
+      "total": 23,
+      "rows": [["Distance", 9], ["Price", 5], ["Food quality", 3], ["Food options", 3], ["Waiting time", 2], ["Other", 1], ["Opening hours", 0]],
+      "highlight": ["Distance"],
+      "note": "Distance is the top factor (39%), then price (22%). Nobody picked opening hours."
+    },
+    "walk": {
+      "title": "How far students will walk",
+      "sub": "Q5: On a short break",
+      "total": 23,
+      "rows": [["Less than 5 min", 3], ["5 to 9 min", 11], ["10 to 14 min", 5], ["15+ min", 0], ["Depends on my break", 4]],
+      "highlight": ["5 to 9 min"],
+      "note": "48% will only walk 5 to 9 minutes and nobody would walk 15 or more."
+    },
+    "info": {
+      "title": "Where students get food info",
+      "sub": "Q8",
+      "total": 23,
+      "rows": [["Google Maps", 15], ["Friends", 4], ["UMD Dining website", 2], ["Restaurant websites", 1], ["Other", 1], ["Social media", 0]],
+      "highlight": ["Google Maps"],
+      "note": "Most rely on Google Maps, not the official dining site."
+    },
+    "line": {
+      "title": "When the line is too long",
+      "sub": "Q11",
+      "total": 23,
+      "rows": [["Go somewhere else", 12], ["Wait in line anyway", 3], ["Skip the meal", 3], ["Buy a quick snack", 2], ["Other", 2], ["Come back later", 1]],
+      "highlight": ["Go somewhere else"],
+      "note": "52% go somewhere else, which uses up more of their break."
+    },
+    "feature": {
+      "title": "Most useful feature for a TerpBites website",
+      "sub": "Q13",
+      "total": 23,
+      "rows": [["Walking distance", 8], ["Food prices and menus", 8], ["Estimated waiting times", 6], ["Restaurant opening hours", 1], ["Other", 0]],
+      "highlight": ["Walking distance", "Food prices and menus"],
+      "note": "Walking distance and prices/menus tie at 35%, with wait times close behind at 26%."
+    },
+    "interviews": {
+      "title": "Interview participants",
+      "sub": "19 in-person interviews, none of whom took the survey",
+      "total": 19,
+      "rows": [["Freshman, on campus", 3], ["Junior, off campus", 4], ["Senior, off campus", 12]],
+      "highlight": ["Senior, off campus"],
+      "note": "Like the survey, our interviews skew toward off-campus seniors (12 of 19)."
+    }
+  },
+
+  "images": {
+    "affinity": {
+      "src": "../images/affinity/step4.png",
+      "title": "Survey affinity diagram, final step",
+      "sub": "Yellow = student answers to Q14, blue = survey results, red = group labels",
+      "note": "The full four-step process is on our project website's Affinity Diagram page."
+    }
+  }
+}

@@ -2,3 +2,5 @@
 .claude/
 .DS_Store
 __pycache__/
+report/findings.html
+report/TerpBites_Findings.pdf
