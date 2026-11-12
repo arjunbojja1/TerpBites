@@ -538,6 +538,10 @@ input[type="range"] { width: 100%; accent-color: var(--berry); height: 28px; cur
   aspect-ratio: 16 / 9; border-radius: 16px; border: 2px dashed #cfc3d6; color: var(--muted); font-weight: 600;
 }
 .narrow-wrap { max-width: 760px; }
+.contributors { margin: 18px 0 0; color: var(--ink-2); max-width: 70ch; }
+.shot-wide { margin-top: 24px; background: #fff; border-radius: var(--radius-lg); padding: 16px; }
+#we-believe .shot-wide { background: var(--wash); }
+.shot a { display: block; }
 .data-h { margin-top: 40px; }
 .data-note { color: var(--ink-2); max-width: 62ch; }
 .analysis p { font-size: 1.1rem; color: var(--ink-2); line-height: 1.7; }
